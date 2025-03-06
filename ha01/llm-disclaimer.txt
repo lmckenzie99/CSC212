@@ -1,0 +1,8 @@
+For problem 'F', Synchronized Lists, I consulted a locally stored and hosted copy of ollama 3.3,
+via a Neovim plugin called 'llm.nvim', for a better understanding of whatthe problem was asking. 
+I also asked the LLM what the best approach to solve the problem was, in which it suggested
+to use an unordered_map a to create a key and value sequence for sorting the second list output.
+
+For problem 'G', I attempted to use vectors and check a vector of booked rooms against a vector of total rooms if the booked count was not the same as the total room count. I had a runtime error,
+ollama 3.3 suggested using an unordered set and the find method, this didn't work either. I ended
+up using a vector of booleans to track booked rooms and compared total rooms against booked and outputted the first room open.

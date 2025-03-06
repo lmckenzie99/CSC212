@@ -1,0 +1,6 @@
+For this problem set, I utilized Claude Sonnet 3.7 for debugging problem-c 'Circuit Math'. 
+There was a logic I encountered, where the output would be the opposite of expected for some test cases and not others.
+
+I also utilized Claude Sonnet 3.7 for assistance on problem-j 'Foosball Dynasty'.
+I had an issue where it would only print one team, when a tie was found, then when I corrected that, the second team 
+was being outputted in lexicographical order not chronological order. 

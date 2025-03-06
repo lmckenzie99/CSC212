@@ -1,0 +1,114 @@
+Question 1:
+
+#include <iostream>
+int main(){
+  int someInt = 6;
+  int *someIntP = &someInt;
+
+  double someDouble = 6.1;
+  double *someDoubleP = &someDouble;
+
+  std::cout << "Int value: " << someInt << " Int address: " << someIntP << '\n';
+  std::cout << "Double value: " << someDouble << " Double address: " << someDoubleP << '\n';
+
+}
+
+Question 2:
+
+#include <iostream>
+int main(){
+  char hello[] = "hello";
+  int nums[] = {1,2,3,4,5};
+
+  char *chPtr = hello;
+  int *numPtr = nums;
+
+  std::cout << "Array of char (address/value): " << '\n';
+  while(*chPtr != '\0'){
+    std::cout << &chPtr << " " << *chPtr << '\n';
+    chPtr++;
+  }
+  std::cout << '\n' << "Array of nums (address/value): " << '\n';
+  while(*numPtr < 6){
+    std::cout << numPtr << " " << *numPtr << '\n';
+    numPtr++;
+  } 
+}
+
+Question 3:
+
+void reverse(int *arr, int size) {
+  if (size <= 1) {
+    return;
+  }
+
+  int *start = arr;
+  int *end = arr + size - 1;
+
+  while (start < end) {
+    int temp = *start;
+    *start = *end;
+    *end = temp;
+
+    start++;
+    end--;
+  }
+}
+
+int main() {
+  int single[] = {1};
+  int odd_len[] = {1, 2, 3, 4, 5};
+  int even_len[] = {1, 2, 3, 4, 5, 6};
+
+  reverse(single, 1);
+  reverse(odd_len, 5);
+  reverse(even_len, 6);
+}
+
+Question 4:
+
+#include <algorithm>
+#include <iostream>
+#include <random>
+void shuffler(int size) {
+  // dynamically allocate memory for an array of integers
+  int *numbers = new int[size];
+
+  // create an array of pointers to integers
+  int **pointers = new int *[size];
+
+ 
+  for (int i = 0; i < size; i++) {
+    numbers[i] = i + 1;
+    pointers[i] = &numbers[i];
+  }
+
+  //create random number generator obj
+  std::random_device rand;
+
+  //use Mersenne Twister and rand to create a shuffler
+  std::mt19937 gen(rand());
+  
+  //use shuffle alg to shuffle pointer arrays
+  std::shuffle(pointers, pointers + size, gen);
+
+  std::cout << "Original Numbers addresses/values: \n";
+  for (int i = 0; i < size; i++) {
+    std::cout << numbers << " "<< numbers[i]<< "\n";
+  }
+  
+  std::cout << "Shuffled Numbers addresses/values: \n";
+  for(int x = 0; x<size; x++){
+    std::cout << pointers << " " << *pointers[x]<< '\n';
+  }
+  std::cout << '\n';
+
+  delete[] numbers;
+  delete[] pointers;
+}
+
+int main() {
+  shuffler(3);
+  shuffler(5);
+  shuffler(10);
+}
