@@ -1,0 +1,30 @@
+The top-k algorithm for finding the top-K elements of a set of 
+n integers uses a max-heap data structure.
+
+Operation:
+Read all integers from the input file into a vector.
+
+Build a max-heap containing all n elements using the make_heap function.
+Extract the k largest elements from the max-heap by repeatedly:
+
+Retrieve the maximum element
+Remove it from the heap
+Add it to a result vector
+
+Sort the k extracted elements in descending order.
+Output the sorted elements.
+
+Analysis:
+
+Reading the input: O(n)
+Building the max-heap: O(n)
+Extracting elements: O(k log n)
+Sorting k elements is O(k log k)
+Ouputting k elements is O(k)
+
+Overall:
+
+O(n) + O(n) + O(k log n) + O(k log k) + O(k)
+
+Which can be simplified to O(n + k log n)
+
