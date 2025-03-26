@@ -14,7 +14,7 @@ int main() {
     }
 
     if (totalThrows % inputPattern.length() != 0) {
-      printf("%s: invalid # of balls\n", inputPattern.c_str());
+      std::cout << inputPattern << ": invalid # of balls\n";
       continue;
     }
 
@@ -49,10 +49,10 @@ int main() {
     }
 
     if (isInvalidPattern) {
-      printf("%s: invalid pattern\n", inputPattern.c_str());
+      std::cout << inputPattern << ": invalid pattern\n";
     } else {
-      printf("%s: valid with %d balls\n", inputPattern.c_str(),
-             totalThrows / inputPattern.length());
+      std::cout << inputPattern << ": valid with "
+                << totalThrows / inputPattern.length() << " balls\n";
     }
   }
 
