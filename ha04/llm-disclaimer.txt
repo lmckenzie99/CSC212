@@ -1,0 +1,2 @@
+For this assigment, I used chatGPT to refactor my code and to generate massive test cases to look for inefficiencies.
+I began writing my solutions in a more C style way and refactored to a C++ style way with better readability. 
